@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<math.h>
+void main()
+{
+int gd=DETECT,gm=0;
+float x1,y1,x2,y2 ;
+float b1,b2,r;
+float t,deg;
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+printf("Enter the coordinates of Line: ");
+
+scanf("%f%f%f%f",&x1,&y1,&x2,&y2);
+setcolor(6);
+line(x1,y1,x2,y2);
+getch();
+
+printf("Enter the angle of rotation: ");
+scanf("%f",&deg);
+t=(22/7)-(22*deg)/(180*7);
+r=pow(x1*x1+y1*y1,0.5);
+b1=abs((r*cos(t))-(r*sin(t)));
+b2=abs((r*sin(t))+(r*cos(t)));
+line(x1,y1,b1,b2);
+getch();
+closegraph();
+}

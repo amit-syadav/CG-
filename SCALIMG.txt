@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<math.h>
+void main()
+{
+
+	int gd=DETECT,gm=0;
+	float i,x1,x2,y1,y2,x,y;
+	printf("Enter the coordinates of line : ");
+	scanf("%f %f %f %f",&x1,&y1,&x2,&y2);
+	detectgraph(&gd,&gm);
+	initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+	line(x1,y1,x2,y2);
+	printf("Enter scaling factor : ");
+	scanf("%f %f",&x,&y);
+	x1=x1*x;
+	y1=y1*y;
+	x2=x2*x;
+	y2=y2*y;
+	printf("After scaling");
+	line(x1,y1,x2,y2);
+	getch();
+	closegraph();
+}
